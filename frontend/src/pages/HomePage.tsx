@@ -66,7 +66,10 @@ function HomePage() {
     return (
         <div className="min-h-screen bg-gray-900">
             <header className="bg-gray-800 shadow-sm px-6 py-4 flex justify-between items-center">
-                <h1 className="text-lg font-semibold text-white">Weather App</h1>
+                <div className="flex items-center gap-2">
+                    <img src="/favicon.svg" alt="" className="w-10 h-10" />
+                    <h1 className="text-lg font-semibold text-white">Weather App</h1>
+                </div>
                 <button
                     onClick={handleLogout}
                     className="text-sm text-gray-400 hover:text-white transition-colors"
@@ -74,7 +77,7 @@ function HomePage() {
                     Logout
                 </button>
             </header>
-    
+
             <main className="max-w-md mx-auto mt-12 px-4">
                 <div className="flex gap-2">
                     <input
@@ -89,9 +92,9 @@ function HomePage() {
                         Search
                     </button>
                 </div>
-    
+
                 {error && <p className="text-red-400 text-sm mt-2">{error}</p>}
-    
+
                 {weather && (
                     <div className="mt-6 bg-gray-800 rounded-xl shadow-md p-6">
                         <h2 className="text-xl font-semibold text-white">{weather.name}</h2>
@@ -100,7 +103,7 @@ function HomePage() {
                     </div>
                 )}
             </main>
-            
+
             {liveMessage && (
                 <div className="fixed top-5 right-5 bg-gray-700 text-white text-sm px-4 py-3 rounded-lg shadow-lg max-w-xs">
                     {liveMessage}
